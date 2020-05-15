@@ -1,0 +1,31 @@
+{
+  "parts": [
+    {
+      "id": 1,
+      "partName": "shroud",
+      "partNumber": "tts1234",
+      "description": "sensor cover for the PQI 380",
+      "vendor": "Acme Products",
+      "qty": 20,
+      "vendorTurnaround": "5 days"
+    },
+    {
+      "id": 2,
+      "partName": "screen",
+      "partNumber": "tts1235",
+      "description": "touchscreen for the PQI 380",
+      "vendor": "Screen r us",
+      "qty": 50,
+      "vendorTurnaround": "10 days"
+    },
+    {
+      "id": 3,
+      "partName": "main board",
+      "partNumber": "tts1235",
+      "description": "main board for the PQI 380",
+      "vendor": "Acer",
+      "qty": 10,
+      "vendorTurnaround": "8 days"
+    }
+  ]
+}
