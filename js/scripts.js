@@ -9,22 +9,6 @@ const message = document.querySelector('.message');
 partName.addEventListener('input', e => {
   console.log(e.target.value);
 
-  if (partName.value === '') {
-    //Clear Values from form
-    partNumber.value = '';
-    description.value = '';
-    vendor.value = '';
-    qty.value = '';
-    time.value = '';
-  }
-
-  //Clear Values from form
-  partNumber.value = '';
-  description.value = '';
-  vendor.value = '';
-  qty.value = '';
-  time.value = '';
-
   async function getData() {
     let response = await fetch('./js/mockDb.json');
     let data = await response.json();
@@ -34,6 +18,11 @@ partName.addEventListener('input', e => {
 
     if (!foundPart) {
       message.classList.add('show');
+      partNumber.value = '';
+      description.value = '';
+      vendor.value = '';
+      qty.value = '';
+      time.value = '';
     } else {
       message.classList.remove('show');
       //Populate HTML
@@ -44,6 +33,7 @@ partName.addEventListener('input', e => {
       time.value = foundPart.vendorTurnaround;
     }
 
+    //Clear inputs if partNumber field is blank
     if (partName.value === '') {
       //Clear Values from form
       partNumber.value = '';
