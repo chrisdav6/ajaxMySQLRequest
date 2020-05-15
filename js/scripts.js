@@ -4,6 +4,7 @@ const description = document.querySelector('#description');
 const vendor = document.querySelector('#vendor');
 const qty = document.querySelector('#qty');
 const time = document.querySelector('#time');
+const message = document.querySelector('.message');
 
 partName.addEventListener('input', e => {
   console.log(e.target.value);
@@ -31,12 +32,17 @@ partName.addEventListener('input', e => {
     const foundPart = await data.parts.find(part => part.partName.includes(e.target.value));
     console.log(foundPart);
 
-    //Populate HTML
-    partNumber.value = foundPart.partNumber;
-    description.value = foundPart.description;
-    vendor.value = foundPart.vendor;
-    qty.value = foundPart.qty;
-    time.value = foundPart.vendorTurnaround;
+    if (!foundPart) {
+      message.classList.add('show');
+    } else {
+      message.classList.remove('show');
+      //Populate HTML
+      partNumber.value = foundPart.partNumber;
+      description.value = foundPart.description;
+      vendor.value = foundPart.vendor;
+      qty.value = foundPart.qty;
+      time.value = foundPart.vendorTurnaround;
+    }
 
     if (partName.value === '') {
       //Clear Values from form

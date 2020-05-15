@@ -19,6 +19,8 @@
     <div class="row">
       <div class="col-md-6 mx-auto">
 
+        <h3 class="message alert alert-danger mb-4">No Parts found!</h3>
+
         <form>
           <div class="form-group">
             <label for="partName">Part Name:</label>
